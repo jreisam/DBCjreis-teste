@@ -27,7 +27,7 @@ public class SLC0001 extends BaseEntity {
     private String numCtrlSLC;
 
     //    @OneToMany(mappedBy = "slc0001", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    private Set<GrupoSLC0001Liquid> grupoSLC0001Liquids;
+    //    private Set<GrupoSLC0001Liquid> grupoSLC0001Liquids;
 
     @JsonIgnore
     @OneToMany(mappedBy = "slc0001", cascade = CascadeType.ALL)
