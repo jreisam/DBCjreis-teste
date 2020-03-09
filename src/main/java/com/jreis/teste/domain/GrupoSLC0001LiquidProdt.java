@@ -18,26 +18,21 @@ import javax.persistence.ManyToOne;
 @Entity
 @EqualsAndHashCode(callSuper = false)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BcMsg extends BaseEntity {
+public class GrupoSLC0001LiquidProdt extends BaseEntity {
 
-    private String domSist;
-    private String identdDestinatario;
-    private String nUOp;
-    private String identdEmissor;
+    private String identdLinhaBilat;
+    private String cNPJNLiqdantDebtd;
+    private String iSPBIFDebtd;
+    private String nomCliDebtd;
+    private String tpTranscSLC;
+    private String vlrLanc;
+    private String cNPJNLiqdantCredtd;
+    private String tpDeb_Cred;
+    private String iSPBIFCredtd;
+    private String nomCliCredtd;
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn
-    private GrupoSeq grupoSeqs;
-
-  /*  @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn
-    @Getter
-    @Setter
-    private Document document;
-
-    @OneToMany(cascade = CascadeType.MERGE,
-            fetch = FetchType.EAGER,
-            mappedBy = "bcmsg")
-    private Set<Sequence> sequence = new HashSet<>();*/;
+    private GrupoSLC0001Prodt grupoSlc0001Prodt;
 }

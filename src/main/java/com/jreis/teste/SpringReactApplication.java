@@ -1,11 +1,10 @@
 package com.jreis.teste;
 
-import com.jreis.teste.domain.Sequence;
-import com.jreis.teste.repository.SequenceRepository;
+import com.jreis.teste.domain.GrupoSeq;
+import com.jreis.teste.repository.GrupoSeqRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -20,16 +19,16 @@ public class SpringReactApplication {
 
     @Component
     public class DatabaseLoader implements CommandLineRunner {
-        // Sequence
-        private final SequenceRepository sequenceRepository;
+        // teste
+        private final GrupoSeqRepository grupoSeqRepository;
 
-        public DatabaseLoader(SequenceRepository repository) {
-            this.sequenceRepository = repository;
+        public DatabaseLoader(GrupoSeqRepository repository) {
+            this.grupoSeqRepository = repository;
         }
 
         @Override
         public void run(String... strings) throws Exception {
-            this.sequenceRepository.save(new Sequence(1, 'N'));
+            this.grupoSeqRepository.save(new GrupoSeq("1", "N"));
         }
     }
 }

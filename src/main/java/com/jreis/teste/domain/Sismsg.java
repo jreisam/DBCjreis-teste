@@ -6,12 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import sun.swing.StringUIClientPropertyKey;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,15 +17,18 @@ import java.util.Set;
 @Entity
 @EqualsAndHashCode(callSuper = false)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Sismsg extends BaseEntity {
+public class SisMsg extends BaseEntity {
 
-    @ManyToOne
-    @JoinColumn
-    private Document document;
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = SLC0001.class)
+    private SLC0001 slc0001;
 
-    @OneToMany(cascade = CascadeType.MERGE,
-            fetch = FetchType.EAGER,
-            mappedBy = "sismsg")
-    private Set<Slc0001> slc0001s = new HashSet<>();
+//    @ManyToOne
+//    @JoinColumn
+//    private Document document;
+//
+//    @OneToMany(cascade = CascadeType.MERGE,
+//            fetch = FetchType.EAGER,
+//            mappedBy = "sismsg")
+//    private Set<Slc0001> slc0001s = new HashSet<>();
 
 }

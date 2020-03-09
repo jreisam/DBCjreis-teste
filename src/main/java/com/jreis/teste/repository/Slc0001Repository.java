@@ -1,10 +1,10 @@
 package com.jreis.teste.repository;
 
 
-import com.jreis.teste.domain.Slc0001;
-import org.springframework.data.repository.CrudRepository;
+import com.jreis.teste.domain.SLC0001;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface Slc0001Repository extends CrudRepository<Slc0001, Long> {
+public interface SLC0001Repository extends JpaRepository<SLC0001, Long> {
 
 }
 
