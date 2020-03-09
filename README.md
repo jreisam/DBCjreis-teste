@@ -1,5 +1,7 @@
 # DBC Teste: João Reis Jr
-
+projeto teste para DBC: carrega arquivo .xml, extrai seus campos e os persiste em banco H2. Por fim
+        disponibiliza api REST para acesso aos dados.
+        
 1 - Certifique-se de primeiro ter instalado e configurado as tecnologias:
     Java, Maven, Maven-Wrapper.
 
